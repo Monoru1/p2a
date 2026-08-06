@@ -1,0 +1,2 @@
+type BadgeProps = { children: React.ReactNode; tone?: 'brand' | 'accent' | 'neutral' | 'success' };
+export function Badge({children,tone='brand'}:BadgeProps){const styles={brand:'bg-p2a-violet-soft text-p2a-violet',accent:'bg-p2a-orange-soft text-p2a-orange',neutral:'bg-p2a-canvas text-p2a-muted ring-1 ring-p2a-line',success:'bg-emerald-50 text-emerald-800'}[tone];return <span className={`inline-flex rounded-full px-3 py-1 text-xs font-extrabold ${styles}`}>{children}</span>}
