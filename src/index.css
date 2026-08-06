@@ -18,15 +18,3 @@ body { margin: 0; min-width: 320px; background: var(--color-p2a-canvas); color: 
 * { box-sizing: border-box; }
 a { color: inherit; text-decoration: none; }
 :focus-visible { outline: 3px solid var(--color-p2a-orange); outline-offset: 3px; }
-
-:root[data-theme='dark'] {
-  --color-p2a-ink: #f8f5fc;
-  --color-p2a-violet: #b78aff;
-  --color-p2a-violet-soft: #302047;
-  --color-p2a-orange: #ffad63;
-  --color-p2a-orange-soft: #3b291d;
-  --color-p2a-canvas: #17131c;
-  --color-p2a-surface: #211b28;
-  --color-p2a-muted: #c8bdce;
-  --color-p2a-line: #3d3345;
-}
