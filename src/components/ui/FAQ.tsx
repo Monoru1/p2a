@@ -1,0 +1,3 @@
+import { ChevronDown } from 'lucide-react';
+export type FAQItem={question:string;answer:string};
+export function FAQ({items}: {items:FAQItem[]}){return <div className="divide-y divide-p2a-line rounded-[1.5rem] border border-p2a-line bg-white px-6">{items.map(item=><details className="group py-5" key={item.question}><summary className="flex cursor-pointer list-none items-center justify-between gap-5 font-extrabold"><span>{item.question}</span><ChevronDown className="shrink-0 text-p2a-orange transition-transform group-open:rotate-180"/></summary><p className="max-w-2xl pt-3 text-sm leading-6 text-p2a-muted">{item.answer}</p></details>)}</div>}
