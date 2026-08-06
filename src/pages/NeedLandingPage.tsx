@@ -8,7 +8,7 @@ import { Button } from '../components/ui/Button';
 import { FAQ } from '../components/ui/FAQ';
 
 export function NeedLandingPage() {
-  const { need: slug } = useParams();
+  const { slug } = useParams();
   const need = getTrainingNeed(slug);
   if (!need) return <Navigate to="/formations" replace />;
 
