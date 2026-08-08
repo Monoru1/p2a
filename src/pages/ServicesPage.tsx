@@ -4,6 +4,7 @@ import { Button } from '../components/ui/Button';
 import { FAQ } from '../components/ui/FAQ';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { Timeline } from '../components/ui/Timeline';
+import { serviceMedia } from '../content/media';
 
 const needs = [
   {
@@ -76,10 +77,13 @@ export function ServicesPage() {
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/72">P2A Formation vous aide à transformer un besoin de conformité, de prévention ou de montée en compétences en une démarche claire, adaptée à vos équipes.</p>
             <div className="mt-9 flex flex-wrap gap-3"><Button to="/contact" className="bg-p2a-orange text-p2a-ink hover:bg-white">Parler de mon besoin</Button><Button to="/formations" variant="secondary" className="border-white/20 bg-white/10 text-white ring-0 hover:bg-white hover:text-p2a-ink">Voir les formations</Button></div>
           </div>
-          <aside className="rounded-[1.75rem] border border-white/15 bg-white/10 p-7 backdrop-blur-sm sm:p-8">
+          <aside className="overflow-hidden rounded-[1.75rem] border border-white/15 bg-white/10 backdrop-blur-sm">
+            <img src={serviceMedia.src} alt={serviceMedia.alt} width={serviceMedia.width} height={serviceMedia.height} loading="eager" decoding="async" className="aspect-[16/9] w-full object-cover" />
+            <div className="p-7 sm:p-8">
             <p className="text-xs font-extrabold uppercase tracking-[.16em] text-p2a-orange">Pour décider sereinement</p>
             <h2 className="mt-5 text-2xl font-extrabold tracking-[-.045em]">Vous obtenez une réponse adaptée, pas un catalogue à déchiffrer.</h2>
             <div className="mt-8 grid gap-5 text-sm leading-6 text-white/75"><p>Un interlocuteur pour clarifier le besoin.</p><p>Un format discuté avant toute inscription.</p><p>Des financements et adaptations étudiés avec vous.</p></div>
+            </div>
           </aside>
         </div>
       </section>
