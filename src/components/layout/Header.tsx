@@ -1,6 +1,7 @@
 import { ArrowUpRight, Building2, GraduationCap, Menu, X } from 'lucide-react';
 import { useEffect, useId, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { BrandLogo } from '../ui/BrandLogo';
 import { Button } from '../ui/Button';
 
 const primaryLinks = [
@@ -34,7 +35,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-p2a-line/80 bg-p2a-canvas/90 backdrop-blur-xl">
       <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 lg:px-8">
         <Link to="/" className="flex items-center gap-3" aria-label="P2A Formation — Accueil">
-          <img src="/p2a-logo.png" className="h-11 w-11 object-contain" alt="" />
+          <BrandLogo className="h-11 w-11" decorative />
           <span className="text-base font-extrabold tracking-[-0.04em]">P2A<span className="text-p2a-orange">Formation</span></span>
         </Link>
 
