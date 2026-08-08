@@ -12,11 +12,17 @@ function upsertMeta(attribute: 'name' | 'property', key: string, content: string
 export function Seo({ title, description }: { title: string; description: string }) {
   useEffect(() => {
     const fullTitle = `${title} | P2A Formation`;
+    const canonicalUrl = new URL(window.location.pathname, window.location.origin).href;
     document.title = fullTitle;
     upsertMeta('name', 'description', description);
     upsertMeta('property', 'og:title', fullTitle);
     upsertMeta('property', 'og:description', description);
-    upsertMeta('property', 'og:url', window.location.href);
+    upsertMeta('property', 'og:url', canonicalUrl);
+    upsertMeta('property', 'og:image', `${window.location.origin}/p2a-logo.png`);
+    upsertMeta('property', 'og:image:alt', 'P2A Formation');
+    upsertMeta('name', 'twitter:card', 'summary');
+    upsertMeta('name', 'twitter:title', fullTitle);
+    upsertMeta('name', 'twitter:description', description);
 
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
@@ -24,7 +30,7 @@ export function Seo({ title, description }: { title: string; description: string
       canonical.setAttribute('rel', 'canonical');
       document.head.append(canonical);
     }
-    canonical.setAttribute('href', window.location.href);
+    canonical.setAttribute('href', canonicalUrl);
   }, [title, description]);
 
   return null;

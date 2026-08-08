@@ -14,7 +14,7 @@ export function Hero({ content, variant = 'default' }: HeroProps) {
   const visualEntrance = reduceMotion ? { duration: 0 } : { duration: 0.65, delay: 0.08, ease: 'easeOut' as const };
 
   return (
-    <section className={`relative overflow-hidden px-5 lg:px-8 ${variant === 'compact' ? 'py-14 lg:py-18' : 'pb-16 pt-14 sm:pt-20 lg:pb-24 lg:pt-24'}`} aria-labelledby="hero-title">
+    <section className={`relative overflow-hidden px-5 lg:px-8 ${variant === 'compact' ? 'py-14 lg:py-20' : 'pb-16 pt-14 sm:pt-20 lg:pb-24 lg:pt-24'}`} aria-labelledby="hero-title">
       <div className="pointer-events-none absolute right-[-12rem] top-[-18rem] h-[40rem] w-[40rem] rounded-full bg-p2a-violet-soft blur-3xl" />
       <div className="pointer-events-none absolute bottom-[-22rem] left-[35%] h-[32rem] w-[32rem] rounded-full bg-p2a-orange/10 blur-3xl" />
 
@@ -53,7 +53,7 @@ export function Hero({ content, variant = 'default' }: HeroProps) {
         <motion.aside initial={{ opacity: 0, scale: reduceMotion ? 1 : 0.97, y: reduceMotion ? 0 : 12 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={visualEntrance} className="relative overflow-hidden rounded-[2rem] bg-p2a-ink p-5 text-white shadow-[0_24px_65px_rgba(36,19,63,.24)] sm:p-7">
           <div className="absolute inset-x-0 top-0 h-1.5 bg-p2a-orange" />
           <div className="rounded-[1.3rem] bg-white p-5 shadow-sm sm:p-6">
-            <img className="h-28 w-full object-contain object-left sm:h-32" src={content.proof.imageSrc} alt={content.proof.imageAlt} />
+            <img className="h-28 w-full object-contain object-left sm:h-32" src={content.proof.imageSrc} alt={content.proof.imageAlt} decoding="async" fetchPriority="high" />
           </div>
           <div className="mt-7">
             <p className="text-xs font-extrabold uppercase tracking-[.15em] text-p2a-orange">{content.proof.eyebrow}</p>
